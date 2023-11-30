@@ -2,7 +2,7 @@ import { Console } from '@woowacourse/mission-utils';
 import PRINT_PHRASE from '../constants/printPhrase.js';
 import { formatAmount, formatAmountMinus } from '../utils/formatAmount.js';
 import GIVEAWAY_MENU from '../constants/giveawayMenu.js';
-import EVENT_TYPE from '../constants/eventType.js';
+import EVENT_TYPE from '../constants/decemberEvent/eventType.js';
 import CONDITION from '../constants/condition.js';
 
 const OutputView = {
