@@ -7,8 +7,8 @@ class Benefit {
     this.#history = [];
   }
 
-  addBenenfit(eventType, amount) {
-    this.#history.push({ eventType, amount });
+  addBenenfit(eventType, discountAmount) {
+    this.#history.push({ eventType, discountAmount });
     return this;
   }
 
@@ -17,19 +17,19 @@ class Benefit {
   }
 
   calculateTotalBenefitsAmount() {
-    const totalBenefitsAmount = this.#history.reduce((totalAmount, { amount }) => {
-      return totalAmount + amount;
+    const totalBenefitsAmount = this.#history.reduce((totalAmount, { discountAmount }) => {
+      return totalAmount + discountAmount;
     }, 0);
     return totalBenefitsAmount;
   }
 
   calculateAfterDiscountPaymentAmount(totalOrderAmount) {
-    const discountAmount = this.#history
+    const totalDiscountAmount = this.#history
       .filter(({ eventType }) => eventType !== EVENT_TYPE.giveawayEvent)
-      .reduce((totalAmount, { amount }) => {
-        return totalAmount + amount;
+      .reduce((totalAmount, { discountAmount }) => {
+        return totalAmount + discountAmount;
       }, 0);
-    return totalOrderAmount - discountAmount;
+    return totalOrderAmount - totalDiscountAmount;
   }
 }
 

@@ -2,37 +2,31 @@ import VisitDate from './VisitDate.js';
 import EVENT_BENEFITS from '../constants/decemberEvent/eventBenefits.js';
 import CONDITION from '../constants/condition.js';
 
-class DecemberEvent {
-  #vistDate;
-
-  constructor(visitDate) {
-    this.#vistDate = new VisitDate(visitDate);
-  }
-
+class DecemberEvent extends VisitDate {
   applyChristmasDDayEvent() {
-    if (this.#vistDate.isBeforeChristmas()) {
-      const dayUntilChristmas = this.#vistDate.getDayUntilChristmas();
+    if (this.isBeforeChristmas()) {
+      const dayUntilChristmas = this.getDayUntilChristmas();
       return EVENT_BENEFITS.christmasDDay(dayUntilChristmas);
     }
     return EVENT_BENEFITS.none;
   }
 
   applyWeekDayEvent(dessertCount) {
-    if (this.#vistDate.isWeekday()) {
+    if (this.isWeekday()) {
       return EVENT_BENEFITS.weekday * dessertCount;
     }
     return EVENT_BENEFITS.none;
   }
 
   applyWeekendEvent(mainCount) {
-    if (this.#vistDate.isWeekend()) {
+    if (this.isWeekend()) {
       return EVENT_BENEFITS.weekend * mainCount;
     }
     return EVENT_BENEFITS.none;
   }
 
   applySpecialEvent() {
-    if (this.#vistDate.isDateExistStar()) {
+    if (this.isDateExistStar()) {
       return EVENT_BENEFITS.special;
     }
     return EVENT_BENEFITS.none;

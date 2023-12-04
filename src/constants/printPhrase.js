@@ -16,11 +16,11 @@ const BENEFITS_HISTORY = '<혜택 내역>';
 const OUTPUT_BENEFITS = (eventType, discountAmount) => `${eventType}: ${discountAmount}`;
 const TOTAL_BENEFITS_AMOUNT = '<총혜택 금액>';
 const AFTER_DISCOUNT_PAYMENT_AMOUNT = '<할인 후 예상 결제 금액>';
-const DECEMBER_EVENT_BADGE = `${EVENT_MONTH}월 이벤트 배지`;
+const DECEMBER_EVENT_BADGE = `<${EVENT_MONTH}월 이벤트 배지>`;
 
 const PRINT_PHRASE = Object.freeze({
   start: START,
-  inputVistDate: INPUT_VISIT_DATE,
+  inputVisitDate: INPUT_VISIT_DATE,
   inputOrder: INPUT_ORDER,
   outputMenu: OUTPUT_MENU,
   outputDateBenefitsPreview: OUTPUT_DATE_BENEFIT_PREVIEW,

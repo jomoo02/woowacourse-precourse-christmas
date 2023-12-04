@@ -12,6 +12,10 @@ class Order {
     this.#order = FORMAT.splitOrder(order);
   }
 
+  getOrder() {
+    return this.#order;
+  }
+
   countMainMenus() {
     const mainMenus = Object.keys(MAIN);
     return this.#countSpecificMenu(mainMenus);

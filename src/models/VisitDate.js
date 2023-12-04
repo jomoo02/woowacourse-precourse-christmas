@@ -9,6 +9,10 @@ class VisitDate {
     this.#date = Number(date);
   }
 
+  getVisitDate() {
+    return this.#date;
+  }
+
   isWeekday() {
     return !SPECIFIC_DATES.weekend.includes(this.#date);
   }

@@ -11,9 +11,9 @@ describe('혜택 테스트', () => {
     const EVENT_TYPES = ['특별 할인', '크리스마스 디데이 할인', '평일 할인'];
     const EVENT_DISCOUNT = [1000, 1200, 4046];
     const OUTPUTS = [
-      { eventType: '특별 할인', amount: 1000 },
-      { eventType: '크리스마스 디데이 할인', amount: 1200 },
-      { eventType: '평일 할인', amount: 4046 },
+      { eventType: '특별 할인', discountAmount: 1000 },
+      { eventType: '크리스마스 디데이 할인', discountAmount: 1200 },
+      { eventType: '평일 할인', discountAmount: 4046 },
     ];
     const benenfit = new Benefit();
 

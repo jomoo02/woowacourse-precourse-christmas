@@ -1,4 +1,4 @@
-import MENU_BOARD from '../menu/menuBoard';
+import MENU_BOARD from '../menu/menuBoard.js';
 
 const NONE = '없음';
 const MENU = '샴페인';

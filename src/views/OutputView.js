@@ -1,7 +1,7 @@
 import { Console } from '@woowacourse/mission-utils';
 import PRINT_PHRASE from '../constants/printPhrase.js';
 import { formatAmount, formatAmountMinus } from '../utils/formatAmount.js';
-import GIVEAWAY_MENU from '../constants/giveawayMenu.js';
+import GIVEAWAY from '../constants/decemberEvent/giveaway.js';
 import EVENT_TYPE from '../constants/decemberEvent/eventType.js';
 import CONDITION from '../constants/condition.js';
 
@@ -11,11 +11,11 @@ const OutputView = {
     return this;
   },
 
-  printMenu(order) {
+  printOrderMenu(order) {
     const { orderMenu, outputMenu } = PRINT_PHRASE;
 
     Console.print(orderMenu);
-    order.forEach(({ menu, count }) => Console.print(outputMenu(menu, count)));
+    order.forEach(([menu, count]) => Console.print(outputMenu(menu, count)));
     Console.print('');
     return this;
   },
@@ -30,10 +30,10 @@ const OutputView = {
     Console.print(PRINT_PHRASE.giveawayMenu);
 
     if (giveaway) {
-      Console.print(`${GIVEAWAY_MENU.giveaway}\n`);
+      Console.print(`${GIVEAWAY.giveawayString}\n`);
       return this;
     }
-    Console.print(`${GIVEAWAY_MENU.none}\n`);
+    Console.print(`${GIVEAWAY.none}\n`);
     return this;
   },
 
@@ -46,6 +46,7 @@ const OutputView = {
       Console.print(`${EVENT_TYPE.none}\n`);
       return this;
     }
+
     history.forEach(({ eventType, discountAmount }) => {
       Console.print(outputBenefits(eventType, formatAmountMinus(discountAmount)));
     });
@@ -71,7 +72,7 @@ const OutputView = {
   },
 
   printEventBadge(eventBadge) {
-    Console.print(PRINT_PHRASE.eventBadge);
+    Console.print(PRINT_PHRASE.decemberEventBadge);
     Console.print(eventBadge);
     return this;
   },

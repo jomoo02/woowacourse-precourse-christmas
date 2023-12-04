@@ -1,4 +1,4 @@
-import GIVEAWAY from './giveaway';
+import GIVEAWAY from './giveaway.js';
 
 const NONE = 0;
 
