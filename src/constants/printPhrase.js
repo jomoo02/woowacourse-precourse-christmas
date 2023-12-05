@@ -1,4 +1,4 @@
-import SPECIFIC_DATE from './specficDate.js';
+import SPECIFIC_DATE from './visitDate/specficDate.js';
 
 const EVENT_MONTH = SPECIFIC_DATE.eventMonth;
 

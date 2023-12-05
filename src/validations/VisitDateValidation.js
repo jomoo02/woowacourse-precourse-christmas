@@ -1,6 +1,6 @@
 import ERROR_MESSAGE from '../constants/errorMessage.js';
-import SPECIFIC_DATES from '../constants/specficDate.js';
-import CONDITION from '../constants/condition.js';
+import SPECIFIC_DATES from '../constants/visitDate/specficDate.js';
+import VISIT_DATE_CONDITION from '../constants/visitDate/condition.js';
 import throwError from '../utils/throwError.js';
 
 class VisitDateValidation {
@@ -22,14 +22,14 @@ class VisitDateValidation {
   }
 
   static #checkWhitespace(visitDate) {
-    if (CONDITION.existWhitespace(visitDate)) {
+    if (VISIT_DATE_CONDITION.existWhitespace(visitDate)) {
       throwError(`${ERROR_MESSAGE.visitDate} whiteSpaceError`);
     }
     return this;
   }
 
   static #checkFirstDigitZero(visitDate) {
-    if (CONDITION.firstDigitZero(visitDate)) {
+    if (VISIT_DATE_CONDITION.firstDigitZero(visitDate)) {
       throwError(`${ERROR_MESSAGE.visitDate} firstDigitZeroError`);
     }
     return this;

@@ -1,5 +1,5 @@
 import VisitDateValidation from '../validations/VisitDateValidation.js';
-import SPECIFIC_DATES from '../constants/specficDate.js';
+import SPECIFIC_DATES from '../constants/visitDate/specficDate.js';
 
 class VisitDate {
   #date;

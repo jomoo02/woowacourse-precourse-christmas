@@ -3,7 +3,7 @@ import PRINT_PHRASE from '../constants/printPhrase.js';
 import { formatAmount, formatAmountMinus } from '../utils/formatAmount.js';
 import GIVEAWAY from '../constants/decemberEvent/giveaway.js';
 import EVENT_TYPE from '../constants/decemberEvent/eventType.js';
-import CONDITION from '../constants/condition.js';
+import BENEFIT_CONDITION from '../constants/benefit/condition.js';
 
 const OutputView = {
   printDateBenefitsPreview(day) {
@@ -42,7 +42,7 @@ const OutputView = {
 
     Console.print(benefitsHistory);
 
-    if (CONDITION.notExistBenefitsHistory(history)) {
+    if (BENEFIT_CONDITION.notExistBenefitsHistory(history)) {
       Console.print(`${EVENT_TYPE.none}\n`);
       return this;
     }
@@ -57,7 +57,7 @@ const OutputView = {
   printTotalBenefitsAmount(benefitsAmount) {
     Console.print(PRINT_PHRASE.totalBenefitsAmount);
 
-    if (CONDITION.notReceiveBenefits(benefitsAmount)) {
+    if (BENEFIT_CONDITION.notReceiveBenefits(benefitsAmount)) {
       Console.print(`${formatAmount(benefitsAmount)}\n`);
       return this;
     }

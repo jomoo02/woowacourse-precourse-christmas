@@ -1,6 +1,6 @@
 import VisitDate from './VisitDate.js';
 import EVENT_BENEFITS from '../constants/decemberEvent/eventBenefits.js';
-import CONDITION from '../constants/condition.js';
+import EVENT_CONDITION from '../constants/decemberEvent/condition.js';
 
 class DecemberEvent extends VisitDate {
   applyChristmasDDayEvent() {
@@ -33,7 +33,7 @@ class DecemberEvent extends VisitDate {
   }
 
   static applyGiveawayEvent(totalOrderAmount) {
-    if (CONDITION.isPossibleGiveawayEvent(totalOrderAmount)) {
+    if (EVENT_CONDITION.isPossibleGiveawayEvent(totalOrderAmount)) {
       return EVENT_BENEFITS.giveawayAmount;
     }
     return EVENT_BENEFITS.none;

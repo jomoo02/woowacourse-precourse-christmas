@@ -1,4 +1,4 @@
-import getWeekDates from '../utils/getWeekDates.js';
+import getWeekDates from '../../utils/getWeekDates.js';
 
 const EVENT_MONTH = 12;
 
